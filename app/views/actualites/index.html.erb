@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1 class="text-center">Agenda</h1>
+
+      <% @actualites.each do |actualite| %>
+
+      <div class="product">
+        <div class='product-upvote'>
+          <div class="product-arrow"></div>
+          <div class='product-count'>0</div>
+        </div>
+        <img src="http://unsplash.it/300/200" alt="kudoz" class="product-image hidden-xs">
+        <div class='product-body'>
+          <h3><%= actualite.name %></h3>
+          <p><%= actualite.tagline %></p>
+        </div>
+        <ul class="list-inline product-controls">
+        <li>
+          <%= link_to actualite_path(actualite) do %>
+          <i class="fa fa-eye"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to edit_actualite_path(actualite) do %>
+          <i class="fa fa-pencil"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to actualite_path(actualite), method: :delete do %>
+          <i class="fa fa-trash"></i>
+          <% end %>
+        </li>
+        </ul>
+      </div>
+
+
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+
+

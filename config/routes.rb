@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
+  get "/team" => "pages#team"
+  get "/contact" => "pages#join_us"
+
+  resources :actualites
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
