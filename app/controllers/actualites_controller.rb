@@ -1,4 +1,5 @@
 class ActualitesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
   before_action :find_product, only: [:show, :edit, :update, :destroy]
   def index
     if params[:classification]
@@ -15,6 +16,7 @@ class ActualitesController < ApplicationController
   end
   def create
     @actualite = Actualite.new(actualite_params)
+    @actualite.user = current_user
     if @actualite.save
     redirect_to actualites_path
     else
