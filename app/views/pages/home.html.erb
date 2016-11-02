@@ -6,7 +6,7 @@
     <ul class="ranger">
       <% @actualites.each do |actualite| %>
       <li>
-        <span class="twolastprod"><%= link_to actualite.calendrier.strftime("Le %d/%m/%Y à %H:%M"), actualite_path(actualite) %> - <%= link_to actualite.name, actualite_path(actualite) %></span>
+        <span class="twolastprod"><%= link_to actualite.calendrier&&actualite.calendrier.strftime("Le %d/%m/%Y à %H:%M"), actualite_path(actualite) %> - <%= link_to actualite.name, actualite_path(actualite) %></span>
       </li>
       <% end %>
     </ul>

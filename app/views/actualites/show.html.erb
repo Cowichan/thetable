@@ -15,7 +15,7 @@
         </tr>
         <tr>
           <td>Date</td>
-          <td><%= @actualite.calendrier.strftime("Le %d/%m/%Y à %H:%M") %></td>
+          <td><%= @actualite.calendrier&&@actualite.calendrier.strftime("Le %d/%m/%Y à %H:%M") %></td>
         </tr>
         <tr>
           <% if @actualite.url %>
