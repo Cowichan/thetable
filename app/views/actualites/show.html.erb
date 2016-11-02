@@ -1,17 +1,50 @@
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "ps.jpg" %>');">
   <div class="banner-content">
     <h1><%= @actualite.name %></h1>
-    <p><%= @actualite.tagline %></p>
-    <% if @actualite.url %>
-    <p><%= link_to @actualite.url, @actualite.url, class: "btn btn-primary btn-lg" %></p>
-    <% end %>
-    <span class="label label-default"><%= @actualite.classification %></span>
-
     <% if @actualite.user %>
       <p>
         Posted by <%= @actualite.user.email %>
       </p>
     <% end %>
+    <p class="aligng"><%= @actualite.tagline %></p>
+
+      <table class="aligntab">
+        <tr>
+          <td>Catégorie</td>
+          <td><%= @actualite.classification %></td>
+        </tr>
+        <tr>
+          <td>Date</td>
+          <td><%= @actualite.calendrier.strftime("Le %d/%m/%Y à %H:%M") %></td>
+        </tr>
+        <tr>
+          <% if @actualite.url %>
+          <td>Site</td>
+          <td><%= link_to @actualite.url, @actualite.url, class: "label label-default" %></td>
+          <% end %>
+        </tr>
+      </table>
+<!--       <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+
+          <strong><dl class="dl-horizontal" style="padding-bottom:50px";>
+            <dt><i class="fa fa-phone"></i></dt>
+            <dd><span class="tex">+33 (0) 6 86 59 78 51 </span></dd>
+           <dt><i class="fa fa-envelope-o"></i></dt>
+           <dd><span class="tex">contact [arobase] lartgrafik.com</span></dd>
+           <dt><i class="fa fa-building-o"></i></dt>
+           <dd><span class="tex">05000 GAP</span></dd>
+          </dl></strong>
+
+          </div>
+        </div>
+      </div> -->
+
+
+
+
+
 
   </div>
 </div>

@@ -86,6 +86,32 @@
 .product-upvote-upvoted .product-arrow {
   border-bottom-color: #5898f1;
 }
-// .product:hover .product-upvote { transform: scale(1.2) }
+.product:hover .product-upvote { transform: scale(1.2) }
 .product:hover .product-controls-hidden a { color: #E6E6E6 }
 .product-upvote:hover .product-arrow { border-bottom: 9px solid #5898f1 }
+
+
+
+.aligng {
+  text-align: left;
+  text-align: justify;
+  padding: 10px 150px;
+}
+
+.aligntab {
+  margin: 0 auto;
+  text-align: left;
+  text-align: justify;
+  padding: 10px 150px;
+}
+
+.aligntab td {
+  padding-right: 20px !important;
+}
+
+/*.aligng2 {
+  text-align: left;
+  text-align: justify;
+  padding: 10px 150px;
+}
+*/

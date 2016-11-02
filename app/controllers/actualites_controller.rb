@@ -1,11 +1,22 @@
 class ActualitesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :index, :show ]
   before_action :find_product, only: [:show, :edit, :update, :destroy]
+
+
+  before_action :current_user?, only: [:edit, :destroy]
+
+  def current_user?
+    if @actualite.user != current_user
+        flash[:alert] = "Vous n'avez pas accès à cette page."
+        redirect_to actualites_path
+    end
+  end
+
   def index
     if params[:classification]
-      @actualites = Actualite.where(classification: params[:classification])
+      @actualites = Actualite.where(classification: params[:classification]).order('id DESC').limit('5')
     else
-      @actualites = Actualite.all
+      @actualites = Actualite.all.order('id DESC').limit('5')
     end
   end
   def show
@@ -43,7 +54,7 @@ class ActualitesController < ApplicationController
   private
 
   def actualite_params
-    params.require(:actualite).permit(:name, :tagline, :url, :classification)
+    params.require(:actualite).permit(:name, :tagline, :url, :classification, :calendrier)
   end
   def find_product
     @actualite = Actualite.find(params[:id])

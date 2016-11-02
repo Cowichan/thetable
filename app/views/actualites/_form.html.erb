@@ -4,7 +4,11 @@
   <%= f.input :tagline, placeholder: "Descr...", label: "Quel desc ?" %>
 
   <%= f.input :url, placeholder: "http://google.com", label: "Quel url ?" %>
+
   <%= f.input :classification, collection: ["cinema", "debat", "musique"], prompt: "wich category ?" %>
 
+  <%= f.input :calendrier, placeholder: "Which date ?", label: "Quelle date ?" %>
+
   <%= f.button :submit, "Ajouter", class: "btn btn-primary" %>
+  <p class="padded"></p>
 <% end %>

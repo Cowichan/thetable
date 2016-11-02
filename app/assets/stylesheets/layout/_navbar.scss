@@ -21,7 +21,7 @@
 
 /* Navbar logo */
 .navbar-wagon-brand img {
-  width: 50px;
+  width: 100px;
 }
 
 /* Navbar right section (with form, links, button) */
@@ -29,6 +29,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.navbar-wagon-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-wagon-pos {
+  padding-left: 100px;
 }
 
 /* Navbar item */

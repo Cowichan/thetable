@@ -1,0 +1,23 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "ps.jpg" %>');">
+  <div class="banner-content">
+    <h1><%= @actualite.name %></h1>
+    <% if @actualite.user %>
+      <p>
+        Posted by <%= @actualite.user.email %>
+      </p>
+    <% end %>
+        <p>
+          Catégorie : <span class="label label-default"><%= @actualite.classification %></span>
+        </p>
+        <% if @actualite.url %>
+        <p>
+          Date : <span class="label label-default"><%= @actualite.calendrier.strftime("Le %d/%m/%Y à %H:%M") %></span>
+        </p>
+          <p>Site : <%= link_to @actualite.url, @actualite.url, class: "label label-default" %></p>
+        <% end %>
+    <p class="aligng"><%= @actualite.tagline %></p>
+
+  </div>
+</div>
+
+

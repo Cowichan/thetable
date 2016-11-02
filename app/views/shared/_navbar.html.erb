@@ -1,19 +1,26 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-  <a href="/" class="navbar-wagon-brand">
-    <%= image_tag "thetable.png" %>
-  </a>
+
+  <div class="navbar-wagon-left">
+
+    <a href="/" class="navbar-wagon-brand">
+      <%= image_tag "thetable.png" %>
+    </a>
+
+    <div class="navbar-wagon-pos hidden-xs hidden-sm">
+      <%= link_to "Agenda", actualites_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Team", team_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Contact", contact_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    </div>
+  </div>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-
-  <% if user_signed_in? %>
-
     <!-- Text link -->
-    <%= link_to "Agenda", actualites_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Team", team_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Contact", contact_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+
+    <% if user_signed_in? %>
 
     <!-- Profile picture and dropdown -->
     <div class="navbar-wagon-item">
