@@ -54,7 +54,7 @@ class ActualitesController < ApplicationController
   private
 
   def actualite_params
-    params.require(:actualite).permit(:name, :tagline, :url, :classification, :calendrier)
+    params.require(:actualite).permit(:name, :tagline, :url, :classification, :calendrier, :photo)
   end
   def find_product
     @actualite = Actualite.find(params[:id])
