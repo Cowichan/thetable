@@ -2,6 +2,7 @@ class Actualite < ActiveRecord::Base
   has_attachment :photo
 
   belongs_to :user
+  has_many :upvotes
 
   validates :name, presence: true, uniqueness: false
   validates :tagline, presence: true, uniqueness: false
